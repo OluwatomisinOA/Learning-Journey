@@ -243,3 +243,5 @@ It involves building a 'predictive model' that can be used to find a 'solution' 
 
 - Reinforcement Learning:
   is a part of machine learning where an agent is put in an environment and he learns to behave in the environment by performing certain actions and observing the rewards which it gets from those actions.
+
+# Machine Learning Algorithms
