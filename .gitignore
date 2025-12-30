@@ -1,0 +1,31 @@
+# Dependencies
+node_modules/
+venv/
+env/
+__pycache__/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Credentials
+.env
+config.json
+*.key
+
+# Build files
+dist/
+build/
+*.log
+
+# Python
+*.pyc
+*.pyo
+*.egg-info/
+
+# Jupyter
+.ipynb_checkpoints/
