@@ -6,11 +6,13 @@ Welcome to my coding learning journey! This repository documents my progress in 
 
 ### Full Stack Development
 
-- HTNL, CSS, JavaScript
-- React.js
-- Node.js & Express
-- Mongodb
-- RESTful APIs
+- HTML, CSS, JavaScript
+- React
+- Node.js
+- Next.js
+- TypeScript
+- Databases
+- Testing
 
 ### AI and Machine Learning
 
@@ -21,12 +23,15 @@ Welcome to my coding learning journey! This repository documents my progress in 
 - Real - world ML Projects
 
 ### Data Analysis
-
-- Python (Pandas, Numpy)
-- Data Visualization (Matplotlib, Seaborn)
 - SQL
-- Excel for Data Analysis
-- Statistics and Analysis
+- Excel
+- Tableau
+- Power BI
+- Python
+- Amazon Web Scraping Using Python
+- Automating API
+- AZURE
+- AWS
 
 ### Data Structures & Algorithms
 
@@ -55,7 +60,7 @@ FullStack Development
 HTML & CSS Basics
 JavaScript Fundamentals
 React Basics
-Node.js & Express
+Node.js & Next.js
 MongoDB Integration
 Build 5 Stack Projects
 
