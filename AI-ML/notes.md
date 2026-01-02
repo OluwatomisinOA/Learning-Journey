@@ -2,7 +2,7 @@
 
 - Artificial Intelligence is the branch of Computer Science that is focused on creating systems that perform tasks that would be normally required by Human Intelligence. These tasks can range understanding of: natural language, recognizing patterns, making decisions, learning from experience.
 
-# Hiatory of AI
+# History of AI
 
 - Greek Mythology - Talos
   Talos was a giant animated bronze warrior programmed to guard the island of Crete created by Hephaestus.

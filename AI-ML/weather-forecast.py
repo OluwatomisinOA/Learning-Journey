@@ -1,6 +1,6 @@
 # import the necesary libraries
 import numpy as np
-import pandas as pd
+import pandas as  pd
 
 # load the csv file as dataframe
 df = pd.read_csv(r'C:\Users\HomePC\Desktop\Learning-Journey\AI-ML\weatherAUS.csv')
