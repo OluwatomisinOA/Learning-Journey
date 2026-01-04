@@ -1,0 +1,75 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #ECFFDC;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 0;
+}
+#main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px 0;
+  margin: 50px auto;
+  border-radius: 10px;
+  background-color: #1B244A;
+  width: 600px;
+  color: antiquewhite;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+#container {
+  display: flex;
+  justify-content: space-around;
+  border: none;
+  margin-bottom: 10px;
+}
+.team {
+  text-align: center;
+  width: 45%;
+  margin-left: 20px;
+}
+.team-name {
+  color: antiquewhite;
+  font-size: 30px;
+}
+.score-box {
+  background-color: black;
+  color: #ECFFDC;
+  font-size: 80px;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 7px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.score-button {
+  background-color: transparent;
+  color: antiquewhite;
+  border: 1px solid antiquewhite;
+  padding: 5px 10px;
+  margin: 5px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: bold;
+}
+.score-button:hover {
+  background-color: antiquewhite;
+  color: #1B244A;
+}
+#new-game-btn {
+  padding: 10px 20px;
+  background-color: green;
+  color: white;
+  font-weight: bold;
+  border: 1px solid #EEEEEE;
+  border-radius: 5px;
+  cursor: pointer;
+}
+#new-game-btn:hover {
+  background-color: white;
+  color: green;
+}
