@@ -2,11 +2,11 @@ let homeScore = 12
 let guestScore = 5
 
 function addPoints(team, points) {
-  if (team == 'home') (
+  if (team === 'home') (
     homeScore += points,
     document.getElementById('home-score').textContent = homeScore
   )
-  else (team == 'guest')(
+  else (team === 'guest')(
     guestScore += points,
     document.getElementById('guest-score').textContent = guestScore
   )
