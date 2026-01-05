@@ -1,0 +1,2 @@
+- Gradient descent is an algorithm that finds best fit line for given training dataset.
+-Cot
