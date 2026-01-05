@@ -1,0 +1,55 @@
+body {
+  background: rgba(11, 79, 11, 0.9);
+  color: #FFFFFF;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+h1 {
+  color: goldenrod;
+  font-size: 3.5rem;
+  margin: 20px 0 10px;
+  text-shadow: 2px 2px 4px #000000;
+}
+#message-el {
+  font-style: italic;
+  font-size: 1.5rem;
+  margin: 15px 0;
+  font-weight: bold;
+  min-height: 40px;
+}
+#cards-el, #sum-el, #price-el {
+  font-size: 1.5rem;
+  margin: 10px 0;
+  letter-spacing: 1px;
+}
+.btn {
+  background: goldenrod;
+  width: 150px;
+  border: none;
+  color: #016f32;
+  font-weight: bold;
+  padding: 15px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 0.8rem;
+  margin: 10px 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+.btn:hover {
+  background-color: #218838;
+  color: goldenrod;
+  border: 2px solid goldenrod;
+  transform: translateY(-2px)
+}
+.btn:active {
+  transform: translateY(1px);
+}
