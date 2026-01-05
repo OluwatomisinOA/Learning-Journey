@@ -23,7 +23,7 @@ h1 {
   font-weight: bold;
   min-height: 40px;
 }
-#cards-el, #sum-el, #price-el {
+#cards-el, #sum-el, #player-el {
   font-size: 1.5rem;
   margin: 10px 0;
   letter-spacing: 1px;
