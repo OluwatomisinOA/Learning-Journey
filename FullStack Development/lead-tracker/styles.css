@@ -1,0 +1,46 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 10px;
+  min-width: 400px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #5f9341;
+  box-sizing: border-box;
+  font-weight: bold;
+}
+
+button {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #5f9341;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+ button:hover {
+  background-color: #4e7a34;
+  transform: translateY(-2px);
+}
+button:active {
+  transform: translateY(1px);
+}
+
+ul{
+  margin-top: 20px;
+  padding-left: 0;
+  list-style: none;
+}
+
+li {
+ margin-top: 5px; 
+}
+
+li a {
+  color: #5f9341;
+}
