@@ -3,14 +3,20 @@ const inputEl = document.getElementById("input-el")
 const inputBtn = document.getElementById("input-btn")
 const saveTabBtn = document.getElementById("tab-btn")
 const deleteBtn = document.getElementById("delete-btn")
-
 const ulEl = document.getElementById("ul-el")
+
+localStorage.clear()
+let leadsFromLocalStorage = JSON.parse( localStorage.getItem("myLeads") )
+alert(leadsFromLocalStorage)
+
 
 inputBtn.addEventListener("click", function () {
   
   myLeads.push(inputEl.value)
   inputEl.value = ""
+  localStorage.setItem("myLeads", JSON.stringify(myLeads))
   renderLeads()
+  alert(localStorage.getItem("myLeads"))
 
 })
 
