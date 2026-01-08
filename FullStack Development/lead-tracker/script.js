@@ -1,84 +1,60 @@
 let myLeads = []
 const inputEl = document.getElementById("input-el")
 const inputBtn = document.getElementById("input-btn")
-const saveTabBtn = document.getElementById("tab-btn")
+const saveTabBtn = document.getElementById("save-tab-btn")
 const deleteBtn = document.getElementById("delete-btn")
 const ulEl = document.getElementById("ul-el")
+const leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"))
 
-localStorage.clear()
-let leadsFromLocalStorage = JSON.parse( localStorage.getItem("myLeads") )
-alert(leadsFromLocalStorage)
+if (leadsFromLocalStorage) {
+  myLeads = leadsFromLocalStorage
+  render(myLeads)
+}
 
-
-inputBtn.addEventListener("click", function () {
-  
-  myLeads.push(inputEl.value)
-  inputEl.value = ""
-  localStorage.setItem("myLeads", JSON.stringify(myLeads))
-  renderLeads()
-  alert(localStorage.getItem("myLeads"))
-
-})
-
-function renderLeads() {
+function render(leads) {
   
   let listItems = ""
 
-for (let i = 0; i < myLeads.length; i++) {
-  // listItems += "<li><a href='" + myLeads[i] + "' target='_blank'>" + myLeads[i] + "</a></li>"
+for (let i = 0; i < leads.length; i++) {
 
   listItems += `
   <li>
-    <a href='${myLeads[i]}' target='_blank'>${myLeads[i]}
+    <a href='${leads[i]}' target='_blank'>${leads[i]}
     </a>
   </li>`
 
-  // or
-  // const li = document.createElement('li')
-  // li.textContent = myLeads[i]
-  // ulEl.append(li)
 }
   
 ulEl.innerHTML = listItems
   
 }
 
-saveTabBtn.addEventListener ("click", function () { 
-
-  chrome.tabs.query(
-    { active: true, currentWindow: true },
-    function (tabs) {
-      if (tabs && tabs[0] && tabs[0].url) {
-        myLeads.push(tabs[0].url)
-        renderLeads()
-
-
-        const originalText = saveTabBtn.textContent
-        saveTabBtn.textContent = "SAVED!"
-        setTimeout(() => {
-          saveTabBtn.textContent = originalText
-        }, 1000)
-      }
-    }
-  )
+inputBtn.addEventListener("click", function () {
+  
+  myLeads.push(inputEl.value)
+  inputEl.value = ""
+  localStorage.setItem("myLeads", JSON.stringify(myLeads))
+  render(myLeads)
 
 })
 
-deleteBtn.addEventListener("click", function () {
-  if (myLeads.length === 0) {
-    return
-  }
-  if (confirm("Are you sure you want to delete all leads?")) {
-    myLeads = []
-    renderLeads()
+saveTabBtn.addEventListener("click", function () {
 
-    deleteBtn.textContent = "DELETED!"
-    deleteBtn.style.backgroundColor = "red"
-    setTimeout(() => {
-      deleteBtn.style.backgroundColor = "#5f9341"
-    }, 1000)
-    setTimeout(() => {
-      deleteBtn.textContent = "DELETE ALL"
-    }, 1000)
-  }
+  chrome.tabs.query({active: true, currentWindow: true}, function(tabs) { 
+
+    myLeads.push(tabs[0].url);
+    localStorage.setItem("myLeads", JSON.stringify(myLeads));
+    render(myLeads);
+
+    }
+  )
+  
+})
+
+deleteBtn.addEventListener("dblclick", function () { 
+
+  localStorage.clear()
+  myLeads = []
+  render(myLeads)
+
 })
