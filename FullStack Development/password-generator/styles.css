@@ -1,0 +1,126 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #adefd9;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#container {
+  background-color: #1F2937;
+  width: 400px;
+  padding: 40px;
+  border: 2px solid white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 0px 2px black;
+}
+
+h1 {
+  color: #FFFFFF;
+  font-size: large;
+  line-height: tight;
+  margin-bottom: 5px;
+}
+
+h1 span {
+  color: #10B981;
+  display: block;
+}
+
+p {
+  color: #D5D4D8;
+  font-size: 10px;
+}
+
+#controls {
+  margin: 20px 0;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#controls label {
+  font-size: 11px;
+}
+#options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  color: turquoise;
+  font-size: 12px;
+}
+
+input[type="number"] {
+  background-color: #273549;
+  color: #10B981;
+  border: 1px solid #10B981;
+  border-radius: 4px;
+  padding: 3px 3px;
+  width: 40px;
+  font-family: inherit;
+  font-size: 11px;
+}
+
+input[type="number"] value {
+  font-size: 12px;
+}
+
+#generate-btn {
+  background-color: #10B981;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+#generate-btn:hover {
+  background-color: #059669;
+  transform: translateY(-2px);
+}
+
+#generate-btn:active {
+  transform: translateY(2px);
+}
+
+#password-display {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.password-box {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 11px;
+  background-color: #273549;
+  color: #10B981;
+  padding: 15px;
+  border-radius: 5px;
+  text-align: center;
+  min-height: 40px;
+  min-width: 0;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Courier New', Courier, monospace;
+  cursor: pointer;
+  transition: o.3s ease;
+  white-space: nowrap;
+  flex: 1;
+}
+
+.password-box:hover {
+  background-color: #374151;
+  transform: translateY(-2px);
+}

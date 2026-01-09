@@ -4,14 +4,57 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
-  <title>Password Generator</title>
+  <title>Random Password Generator</title>
 </head>
 <body>
-  <h1>Password Generator</h1>
-  <div>
-    <h1>Generate</h1>
+  
+  <div id="container">
+
+    <div id="header">
+      <h1>Generate a <br><span>random password</span></h1>
+      <p>Never use an insecure password again.</p>
+    </div>
+
+    <div id="controls">
+
+      <div>
+        <label for="password-length">Password Length: 
+          <input type="number" id="password-length" value="15" min="8" max="20">
+        </label>
+      </div>
+
+      <div id="options">
+        <label class="toggle">
+          <input type="checkbox" id="lowercase-toggle" checked>
+          Include Lowercase
+        </label>
+        <label class="toggle">
+          <input type="checkbox" id="uppercase-toggle" checked> 
+          Include Uppercase
+        </label>
+        <label class="toggle">
+          <input type="checkbox" id="numbers-toggle" checked> 
+          Include Numbers
+        </label>
+        <label>
+          <input type="checkbox" id="symbols-toggle" checked> 
+          Include Symbols
+        </label>
+        <br>
+      </div>
+
+    </div>
+
+    <button id="generate-btn">Generate Password</button>
+
+    <div id="password-display">
+      <div class="password-box" id="pass-one" title="Click to copy"></div>
+      <div class="password-box" id="pass-two" title="Click to copy"></div>
+    </div>
+
   </div>
 
   <script src="script.js"></script>
+
 </body>
 </html>
