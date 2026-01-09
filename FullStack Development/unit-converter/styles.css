@@ -40,10 +40,11 @@ h3 {
 #num-el {
   border: 1px solid wheat;
   border-radius: 4px;
-  padding: 8px 18px;
+  background-color: blueviolet;
+  padding: 10px 8px 10px 12px;
   height: 30px;
-  width: 50px;
-  margin-top: 3px;
+  width: 70px;
+  margin: 3px auto;
   font-size: 30px;
   font-weight: bold;
 }
