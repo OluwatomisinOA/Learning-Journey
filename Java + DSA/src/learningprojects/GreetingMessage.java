@@ -1,3 +1,5 @@
+package learningprojects;
+
 import java.util.Scanner;
 
 public class GreetingMessage {

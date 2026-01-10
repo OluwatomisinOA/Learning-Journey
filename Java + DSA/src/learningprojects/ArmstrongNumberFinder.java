@@ -1,6 +1,6 @@
-import java.util.Scanner;
+package learningprojects;
 
-import static java.lang.Math.log10;
+import java.util.Scanner;
 
 public class ArmstrongNumberFinder {
 

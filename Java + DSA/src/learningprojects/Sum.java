@@ -1,3 +1,5 @@
+package learningprojects;
+
 import java.util.Scanner;
 
 public class Sum {
@@ -8,6 +10,6 @@ public class Sum {
         System.out.print("Enter the first number: ");
         float num2 = input.nextFloat();
         float sum = num1 + num2;
-        System.out.println("Sum:" + sum);
+        System.out.println("learningprojects.Sum:" + sum);
     }
 }
