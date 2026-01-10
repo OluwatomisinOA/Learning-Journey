@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class BasicNumberOfDigitDeterminer {
+public class NumberOfDigitOccurrenceDeterminer {
 
     public static void main(String[] args) {
 
