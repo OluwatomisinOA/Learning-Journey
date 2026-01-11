@@ -1,6 +1,7 @@
 function setPermissionLevel(permissionLevel, ...names) {
 
-  names.forEach((name) => console.log(`${name} now has ${permissionLevel} access.`));
+  names.forEach((name) =>
+    console.log(`${name} now has ${permissionLevel} access.`));
 
 }
 
