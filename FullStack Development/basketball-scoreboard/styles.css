@@ -55,10 +55,15 @@ body {
   cursor: pointer;
   font-family: inherit;
   font-weight: bold;
+  transition: 0.2s ease;
 }
 .score-button:hover {
   background-color: antiquewhite;
   color: #1B244A;
+  transform: translateY(-2px);
+}
+.score-button:active {
+  transform: translateY(2px);
 }
 #new-game-btn {
   padding: 10px 20px;
@@ -68,8 +73,13 @@ body {
   border: 1px solid #EEEEEE;
   border-radius: 5px;
   cursor: pointer;
+  transition: 0.3s ease;
 }
 #new-game-btn:hover {
   background-color: white;
   color: green;
+  transform: translateY(-2px);
+}
+#new-game-btn:active {
+  transform: translateY(2px);
 }
