@@ -1,0 +1,17 @@
+[
+  {
+    "playerid": 1,
+    "player-name": "skybox",
+    "points": 20
+  },
+  {
+    "playerid": 2,
+    "player-name": "stardust",
+    "points": 10
+  },
+  {
+    "playerid": 3,
+    "player-name": "langman",
+    "points": 35
+  }
+]
