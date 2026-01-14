@@ -1,16 +1,16 @@
-function preloading(url) {
-  return result = new Promise((resolve, reject) => {
-    const img = new Image()
-    img.src = url
-    img.alt = ""
-    img.addEventListener('load', () => resolve(img))
-    img.addEventListener('error', () => reject('img has not loaded'))
-  })
+function preloadingImg(url) {
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    img.addEventListener('load', () => { resolve(img) });
+    img.addEventListener('error', () => { reject('img has not loaded') });
+    img.src = url;
+    img.alt = "";
+  });
 }
 
 
 try {
-  const result = await preloading("https://scrimba.ans3.cdn.digitaloceanspaces.com/assets/courses/gadvancedjs/scenic1.jpg")
+  const result = await preloadingImg("https://scrimba.ams3.cdn.digitaloceanspaces.com/assets/courses/gadvancedjs/scenic1.jpg")
   console.log(result)
   document.getElementById('img-container').appendChild(result)
 } catch (error) {
