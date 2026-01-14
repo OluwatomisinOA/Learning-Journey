@@ -1,0 +1,66 @@
+# Calculator program
+
+# addition function
+def add(a, b):
+  return a + b
+
+# subtraction function
+def subtract(a, b):
+  return a - b
+
+# multiplication function
+def multiply(a, b):
+  return a * b
+
+# division function
+def divide(a, b):
+  if b == 0:
+    return "Division by zero is not valid!"
+  else:
+    return a / b
+  
+def main():
+  while True:
+    print("=== Basic Calculator Program ===")
+    print("\n1. Addition")
+    print("\n2. Subtraction")
+    print("\n3. Multiplication")
+    print("\n4. Division")
+    
+    try:
+      choice = input("\nWhich operation do you want to perform (1/2/3/4): ")
+      
+      if choice == '1':
+        num1 = float(input("Enter the first number: "))
+        num2 = float(input("Enter the second number: "))
+        print(add(num1, num2))
+        
+      elif choice == '2':
+        num1 = float(input("Enter the first number: "))
+        num2 = float(input("Enter the second number: "))
+        print(subtract(num1, num2))
+        
+      elif choice == '3':
+        num1 = float(input("Enter the first number: "))
+        num2 = float(input("Enter the second number: "))
+        print(multiply(num1, num2))
+        
+      else:
+        num1 = float(input("Enter the first number: "))
+        num2 = float(input("Enter the second number: "))
+        print(divide(num1, num2))
+      
+    except:
+      print("Invalid choice of operation! Please select (1/2/3/4)")
+      
+    answer = input("\nDo you want to perform another operation (yes/no): ").lower()
+    
+    try:
+      if answer == 'no':
+        print("\nThank you for using the Basic Calculator Program.")
+        break
+    except:
+      print("Invalid choice! Please enter (yes/no)")
+      
+main()
+    
