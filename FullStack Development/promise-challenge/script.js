@@ -4,7 +4,7 @@ function preloadingImg(url) {
     img.addEventListener('load', () => { resolve(img) });
     img.addEventListener('error', () => { reject('img has not loaded') });
     img.src = url;
-    img.alt = "";
+    img.alt = "a beautiful scene";
   });
 }
 

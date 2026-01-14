@@ -8,7 +8,7 @@ function uploadFile() {
 }
 
 
-function processFile(callback) {
+function processFile() {
   return new Promise((resolve, reject) => {
     console.log('Step 2: Processing file...')
     setTimeout(() => {
@@ -17,7 +17,7 @@ function processFile(callback) {
   })
 }
 
-function notifyUser(callback) {
+function notifyUser() {
   return new Promise((resolve, reject) => {
     console.log('Step 3: Notifying file...')
     setTimeout(() => {
