@@ -3,7 +3,7 @@ function getImagePromise(url) {
     setTimeout(() => {
       const img = new Image();
       img.addEventListener('load', () => resolve(img));
-      img.addEventListener('error', () => reject(new Error("Failed to load image")));
+      img.addEventListener('error', () => reject(new Error(`Failed to load image: ${url}`)));
       img.src = url;
       img.alt = "";
     }, 500);
