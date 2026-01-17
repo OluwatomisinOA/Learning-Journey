@@ -1,24 +1,25 @@
+import 'dotenv/config';
 import OpenAI from 'openai';
 
-// const openai = new OpenAI({
-//   apiKey: '123456',
-//   dangerouslyAllowBrowser: true
+const openai = new OpenAI({
+  apiKey: process.env.GROQ_API_KEY,
+  baseURL: "https://api.groq.com/openai/v1"
+})
 
-// })
-
-// console.log(openai.apiKey);
-
-async function testAI() {
-  try {
-    const completion = await openai.chat.completions.create({
-      messages: [{ role: "user", content: "Say hello!" }],
-      model: "gpt-3.5-turbo",
-    });
-
-    console.log(completion.choices[0].message.content);
-  } catch (error) {
-    console.error("Error details:", error);
+const messages = [
+  {
+    role: 'system',
+    content: 'You are a master educator who can explain any topic to any age group.'
+  },
+  {
+    role: 'user',
+    content: 'Explain Quantum Computing to a 10-year-old. Use exactly two sentences and a simple analogy.'
   }
-}
+]
 
-testAI();
+const response = await openai.chat.completions.create({
+  model: "llama-3.3-70b-versatile",
+  messages: messages
+})
+
+console.log(response.choices[0].message.content)
