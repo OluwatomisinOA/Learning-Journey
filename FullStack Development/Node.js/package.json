@@ -1,0 +1,19 @@
+{
+    "name": "wild-horizons",
+    "version": "1.0.0",
+    "description": "a dataset of the planet's most interesting places",
+    "keywords": [
+        "default"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "default"
+    },
+    "license": "ISC",
+    "author": "Oluwatomisin Akinsola",
+    "type": "module",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server.js"
+    }
+}
