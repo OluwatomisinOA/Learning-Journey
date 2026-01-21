@@ -2,6 +2,7 @@ import http from 'http';
 import { getDataFrame } from './database/db.js';
 import { sendJsonResponse } from './utils/sendJsonResponse.js';
 import { getDataByPathParams } from './utils/getDataByPathParams.js';
+import { getDataByQueryParams } from './utils/getDataByQueryParams.js'
 
 const PORT = 8000;
 
@@ -9,9 +10,15 @@ const server = http.createServer(async(req, res) => {
 
   const destinations = await getDataFrame();
 
-  if (req.url === '/api' && req.method === 'GET') {
+  const urlObj = new URL(req.url, `http://${req.headers.host}`);
 
-    sendJsonResponse(res, 200, destinations);
+  const queryObj = Object.fromEntries(urlObj.searchParams);
+  
+
+  if (urlObj.pathname === '/api' && req.method === 'GET') {
+    let filteredData = getDataByQueryParams(destinations, queryObj);
+    
+    sendJsonResponse(res, 200, filteredData);
 
   } else if (req.url.startsWith('/api/continent') && req.method == 'GET') {
 
