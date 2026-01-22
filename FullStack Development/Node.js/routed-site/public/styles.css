@@ -1,0 +1,96 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
+
+header,
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+}
+
+header h1 {
+  font-family: "Press Start 2P", serif;
+}
+
+span {
+  color: skyblue;
+}
+
+header nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 1rem;
+  font-family: "Press Start 2P", serif;
+  font-size: 80%;
+}
+
+header nav a:hover {
+  text-decoration: underline;
+  color: skyblue;
+}
+
+h2 {
+  margin: 0;
+}
+
+p {
+  font-size: 100%;
+  font-family: 'Poppins';
+  margin-top: 0;
+  padding: 10px;
+}
+
+main {
+  padding: 2rem;
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.product-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 250px;
+  margin: auto;
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+}
+
+.product-card h3 {
+  margin: 1rem;
+  font-size: 1.2rem;
+}
+
+.product-card p {
+  margin: 0 1rem 1rem;
+  color: #555;
+}
+
+.about-img {
+  width: 90%;
+  margin: 0 auto;
+  display: block;
+  margin-bottom: 1em;
+}
+
+footer {
+  font-size: 0.9rem;
+  width: 100%;
+}
