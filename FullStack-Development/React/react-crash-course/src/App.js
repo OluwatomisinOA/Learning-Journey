@@ -3,7 +3,11 @@ import { ProductList } from './components/ProductList';
 import { ProductCard } from './components/ProductCard';
 import './App.css';
 
-
+const styles = {
+  ListDivider: {
+    borderColor: "slategray"
+  }
+}
      
 function App() {
   const products = [
@@ -15,6 +19,7 @@ function App() {
         "3x or 5x Telephoto camera",
         "Up to 29 hours video playback",
       ],
+      stockCount: 10,
       price: 999,
     },
     {
@@ -25,6 +30,7 @@ function App() {
         "Dust, sweat and water resistant",
         "Up to 6 hours listening time",
       ],
+      stockCount: 0,
       price: 249,
     },
     {
@@ -35,6 +41,7 @@ function App() {
         "Always-On Retina display",
         "Up to 18 hours normal use",
       ],
+      stockCount: 6,
       price: 399,
     }
   ];
@@ -59,7 +66,7 @@ function App() {
       
       {products.filter(({ price }) => price < 500).map(({ title, price }) => (
         <Fragment key={title}>
-          <hr style={{borderColor: "slategray"}}/>
+          <hr style={styles.ListDivider}/>
           <p>
             {title} - ${price}
           </p> 

@@ -1,6 +1,11 @@
-export function ProductList({children}) {
+const styles = {
+  display: "flex",
+  gap: "16px" 
+}
+
+export function ProductList({ children }) {
   return <div
-    style={{ display: "flex", gap: "16px" }}>
+    style={styles}>
     {children}
   </div>
 }

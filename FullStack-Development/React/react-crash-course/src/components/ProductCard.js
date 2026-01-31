@@ -1,15 +1,22 @@
+const styles = {
+  Container: {
+    width: "100%",
+    border: "1px solid white",
+    borderRadius: "8px",
+    padding: "16px",
+    textAlign: "center"
+  },
+  List: {
+    listStyle: "none",
+    padding: 0 
+  },
+}
+
 export function ProductCard({ product, background = "slategray", onPurchase }) {
 
 
   return (
-    <article style={{
-      background,
-      width: "100%",
-      border: "1px solid white",
-      borderRadius: "8px",
-      padding: "16px",
-      textAlign: "center",
-    }}>
+    <article style={{...styles.Container, background }}>
       <h2>{product.title}</h2>
       <img
         src={product.imageSrc}
@@ -18,10 +25,21 @@ export function ProductCard({ product, background = "slategray", onPurchase }) {
         width={128}
       />
       <p>Specifications:</p>
-      <ul style={{ listStyle: "none", padding: 0 }}>
+      <ul style={styles.List}>
         {product.specifications.map((spec, index) => ( <li key={index}>{spec}</li> ))}
       </ul>
-      <button onClick={() => {onPurchase(product)}}>Buy (From ${product.price})</button>
+      <Status stockCount={product.stockCount} />
+      {product.stockCount > 0 && (
+        <button onClick={() => onPurchase(product)}>
+          Buy (From ${product.price})
+        </button>
+      )}
     </article>
   );
+}
+
+function Status({ stockCount }) {
+  const NotAvailableTemplate = <p>Not available</p>;
+  const AvailableTemplate = <p>{stockCount} items availale</p>;
+  return stockCount === 0 ? NotAvailableTemplate : AvailableTemplate;
 }
