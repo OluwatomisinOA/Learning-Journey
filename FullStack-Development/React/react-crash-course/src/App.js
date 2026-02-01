@@ -3,50 +3,14 @@ import { Fragment } from 'react';
 import { ProductList } from './components/ProductList';
 import { ProductCard } from './components/ProductCard';
 import { ProductFilter } from './components/ProductFilter';
+import { products as ProductsData } from './data/products';
 import './App.css';
 
 
      
 function App() {
-  const products = [
-    {
-      id: 1,
-      imageSrc: "images/iphone.png",
-      title: "iPhone 15 Pro",
-      specifications: [
-        "A17 Pro chip with 6-core GPU",
-        "3x or 5x Telephoto camera",
-        "Up to 29 hours video playback",
-      ],
-      stockCount: 10,
-      price: 999,
-    },
-    {
-      id: 2,
-      imageSrc: "images/airpods.png",
-      title: "Airpords Pro 2",
-      specifications: [
-        "Noise cancellation",
-        "Dust, sweat and water resistant",
-        "Up to 6 hours listening time",
-      ],
-      stockCount: 0,
-      price: 249,
-    },
-    {
-      id: 3,
-      imageSrc: "images/apple-watch.png",
-      title: "Apple Watch Series 9",
-      specifications: [
-        "45mm or 41mm case size",
-        "Always-On Retina display",
-        "Up to 18 hours normal use",
-      ],
-      stockCount: 6,
-      price: 399,
-    }
-  ];
-
+  
+  const [products, setProducts] = useState(ProductsData);
   const [filters, setFilters] = useState({
     price: {
       min: 0,
@@ -57,11 +21,11 @@ function App() {
 
   const [favorites, setFavorites] = useState([]);
 
-  function handlePurchase(product) {
-    alert(`You have bought the ${product.title} for $${product.price}!`);
+  function handlePurchase(productId, stockCount) {
+    setProducts((prevProducts) => prevProducts.map((product) => product.id === productId ? {...product, stockCount} : product ))
   }
 
-  function handleClick(key, value) {
+  function handleFilter(key, value) {
     setFilters((prevFilters) => ({
       ...prevFilters,
       price: {
@@ -94,7 +58,7 @@ function App() {
       </ProductList>
 
       <h2>Products filtered by price</h2>
-      <ProductFilter filters={filters} onFilter={handleClick} />
+      <ProductFilter filters={filters} onFilter={handleFilter} />
       
       {products.filter(({ price }) => price >= filters.price.min && price <= filters.price.max).map(({ title, price }) => (
         <Fragment key={title}>
