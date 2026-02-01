@@ -1,17 +1,16 @@
+import { useState } from 'react';
 import { Fragment } from 'react';
 import { ProductList } from './components/ProductList';
 import { ProductCard } from './components/ProductCard';
+import { ProductFilter } from './components/ProductFilter';
 import './App.css';
 
-const styles = {
-  ListDivider: {
-    borderColor: "slategray"
-  }
-}
+
      
 function App() {
   const products = [
     {
+      id: 1,
       imageSrc: "images/iphone.png",
       title: "iPhone 15 Pro",
       specifications: [
@@ -23,6 +22,7 @@ function App() {
       price: 999,
     },
     {
+      id: 2,
       imageSrc: "images/airpods.png",
       title: "Airpords Pro 2",
       specifications: [
@@ -34,6 +34,7 @@ function App() {
       price: 249,
     },
     {
+      id: 3,
       imageSrc: "images/apple-watch.png",
       title: "Apple Watch Series 9",
       specifications: [
@@ -46,8 +47,36 @@ function App() {
     }
   ];
 
+  const [filters, setFilters] = useState({
+    price: {
+      min: 0,
+      max: 999
+    },
+    other: "other values"
+  });
+
+  const [favorites, setFavorites] = useState([]);
+
   function handlePurchase(product) {
     alert(`You have bought the ${product.title} for $${product.price}!`);
+  }
+
+  function handleClick(key, value) {
+    setFilters((prevFilters) => ({
+      ...prevFilters,
+      price: {
+        ...prevFilters.price,
+        [key]: value,
+      },
+    }));
+  }
+
+  function handleFavorites(productId) {
+    if (favorites.includes(productId)) {
+      setFavorites((prevFavorites) => prevFavorites.filter(id => id !== productId));
+    } else {
+      setFavorites((prevFavorites) => [...prevFavorites, productId])
+    }
   }
 
   return (
@@ -57,16 +86,19 @@ function App() {
           <ProductCard
             key={product.title}
             product={product}
+            isFavorites={favorites.includes(product.id)}
             onPurchase={handlePurchase}
+            onFavorites={handleFavorites}
           />
     ))}
       </ProductList>
 
-      <h2>Produts which doesn't cost up to $500</h2>
+      <h2>Products filtered by price</h2>
+      <ProductFilter filters={filters} onFilter={handleClick} />
       
-      {products.filter(({ price }) => price < 500).map(({ title, price }) => (
+      {products.filter(({ price }) => price >= filters.price.min && price <= filters.price.max).map(({ title, price }) => (
         <Fragment key={title}>
-          <hr style={styles.ListDivider}/>
+          <hr className='ListDivider'/>
           <p>
             {title} - ${price}
           </p> 
